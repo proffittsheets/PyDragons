@@ -9,9 +9,9 @@ PyDragons is an AWS project for data generation, hosting, querying, and visualiz
 2. Upload sample CSVs to S3 following the partition structure as shown in the video to a raw folder for each table (dragonevents and dragons). For example, you should have an S3 structure of bucketname > raw > dragonevents > 2020 > 03 > 19 > CSV and bucket name > raw > dragons > 2020 > 03 > 19 > CSV
 3. Create separate folders for raw data, transformed data, and Athena queries
 
-# Create or Moidfy Your Own CSV Data Sets
+# Create or Modify Your Own CSV Data Sets
 1. To create your own data sets, run the SpawnDragonsToCSV.py python 3 script in Terminal 
 2. To modify the names output of these sets you can edit dragonnames.csv
-3. To modify dragon burn, loot, sleep, and eat paramaters modify dragontypes.csv
+3. To modify dragon burn, loot, sleep, and eat parameters modify dragontypes.csv
 4. You can also modify the "Design Variables" section in SpawnDragonsToCSV.py to edit the number of events created,
 number of dragons created, and timing between events and dragons creations

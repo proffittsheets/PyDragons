@@ -6,7 +6,7 @@ PyDragons is an AWS project for data generation, hosting, querying, and visualiz
 
 # Getting Started Using PyDragons-AthenaDemo
 1. Grab all github files and watch the video at the youtube link here: https://youtu.be/mhvhJAFzsxo
-2. Upload sample CSVs to S3 following the partition structure for 2020 > 03 > 19 as show in the video to a raw folder
+2. Upload sample CSVs to S3 following the partition structure as shown in the video to a raw folder for each table (dragonevents and dragons). For example, you should have an S3 structure of bucketname > raw > dragonevents > 2020 > 03 > 19 > CSV and bucket name > raw > dragons > 2020 > 03 > 19 > CSV
 3. Create separate folders for raw data, transformed data, and Athena queries
 
 # Create or Moidfy Your Own CSV Data Sets

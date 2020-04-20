@@ -2,8 +2,8 @@
 PyDragons is an AWS project for data generation, hosting, querying, and visualization initially authored by Molly Proffitt Sheets and open to collaborators.
 
 # Updates
-1.0 March 24, 2020: Uploaded initial PyDragons-AthenaDemo files
-1.1 April 20, 2020: Uploaded initial PyDragons-StreamingDemo files
+1.0 March 24, 2020: Uploaded initial PyDragons-AthenaDemo files</br>
+2.0 April 20, 2020: Uploaded initial PyDragons-StreamingDemo files
 
 # Getting Started Using PyDragons-AthenaDemo
 1. Grab all github files and watch the video at the youtube link here: https://youtu.be/mhvhJAFzsxo

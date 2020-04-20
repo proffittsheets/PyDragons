@@ -1,0 +1,11 @@
+Type,RegionPref,Sleep,Burn,Loot,Eat,MinFt,MaxFt,BurnMin,BurnMax,FoodTypes,LootTypes
+Garnet,Coastal,0.5,0.2,0.2,0.1,5,20,50,80,Fish | Chickens,Keys | Lamps | Goblets | Rugs | Cups | Utensils | Plates
+Emerald,Mountains,0.4,0.1,0,0.5,10,25,80,325,Fruits | Salads | Cheeses | Kale | Tofu | Noodles,None
+Azul,Valley,0.6,0.2,0,0.2,35,50,1500,2500,Sheep |  Steaks,None
+Purple,Riverside,0.2,0.4,0.2,0.2,5,15,500,1000,Rosemary | Saffron,Birkin Bags | Gucci Shirts | iPhones | Teslas | Beats by Dre
+Golden,Riverside,0.8,0.1,0.05,0.05,100,500,1200,4500,Wine | Cheeses | Oysters,Gold | Gems | Weapons | Faberge Eggs
+Silver,Coastal,0.6,0,0.4,0,80,120,0,0,Empty,Roses | Wedding Rings
+Bronze,Coastal,0.7,0,0.3,0,35,68,0,0,Empty,Paintings | Statues | Antiques
+Onyx,Mountains,0.8,0.15,0,0.05,200,350,2000,2500,Humans | Other Dragons,None
+Rainbow,Coastal,0.6,0,0,0.4,125,375,0,0,Brownies | Cookies |  Cakes  | Pies,None
+Alabaster,Valley,0.6,0.4,0,0,30,90,1300,2500,Baby Teeth | Other Dragons,None

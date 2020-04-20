@@ -1,0 +1,80 @@
+#############################################################
+#            Amazon Kinesis Firehose Requirements           #
+#############################################################
+
+Demo #1: Stream to Parquet with source record Backup 
+COPY & PASTE These when setting up the Firehose 
+
+### Source record S3 backup ###
+
+Prefix - optional
+PyDragons-StreamingDemo/raw/dragons/year=!{timestamp:yyyy}/month=!{timestamp:MM}/day=!{timestamp:dd}/hour=!{timestamp:HH}/'
+
+### S3 Destination ###
+
+Prefix - optional
+PyDragons-StreamingDemo/processed/dragons/year=!{timestamp:yyyy}/month=!{timestamp:MM}/day=!{timestamp:dd}/hour=!{timestamp:HH}/'
+
+Error prefix - optional
+PyDragons-Streaming/failed/dragons/!{firehose:error-output-type}/year=!{timestamp:yyyy}/month=!{timestamp:MM}/day=!{timestamp:dd}/hour=!{timestamp:HH}/'
+
+
+-----
+
+Demo #2: Stream Compress to GZIP formatted JSON and COPY into RedShift
+COPY & PASTE These when setting up the Firehose 
+
+### INPUT YOUR REDSHIFT DETAILS HERE ###
+HOST: 
+Port: 5439
+User:
+Password: 
+Database:
+
+### CREATE TABLE IN REDSHIFT ###
+Copy the following SQL query:
+
+create table dragonevents(
+	dragon_id varchar(50), 
+	event_uuid varchar(50), 
+	event_timestamp timestamp, 
+	utc_offset varchar(50), 
+	event_name varchar(50), 
+	name varchar(50), 
+	type varchar(50), 
+	state varchar(50), 
+	value int, 
+	value_type varchar(50), 
+	location varchar(50), 
+	affected_pop int
+)
+DISTSTYLE ALL;
+
+### Intermediate S3 destination ###
+PyDragons-StreamingDemo/processed/dragonevents/
+
+### COPY COMMAND ###
+Remember to add: gzip format as json 'auto'
+Remember to create a table in RedShift and for schemas to user lowercase keys
+If you are creating your own custom events
+
+### CREATE REDSHIFT TABLE FOR DRAGONS ###
+create table dragons(
+	dragon_id varchar(50), 
+	event_uuid varchar(50), 
+	event_timestamp timestamp, 
+	utc_offset varchar(50), 
+	event_name varchar(50), 
+	name varchar(50), 
+	type varchar(50), 
+	region varchar(50), 
+	size_ft int
+)
+DISTSTYLE ALL;
+
+### COPY PARQUET STORED DATA INTO REDSHIFT ###
+COPY dragons
+FROM 's3://<bucketname>/PyDragons-StreamingDemo/processed/dragons/'
+IAM_ROLE 'arn:aws:iam::<account>:role/MyRedshiftRole'
+FORMAT AS PARQUET;
+

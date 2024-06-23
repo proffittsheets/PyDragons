@@ -344,7 +344,7 @@ def spawn_dragon_machine():
 ################################################################################
 #                               START MACHINE                                  #
 ################################################################################
-# Let's create some starter dragons!
+# Let's create some starter dragons for the machine!
 spawn_initial_dragons()
 
 # Let's do this. Start the dragon machine.
